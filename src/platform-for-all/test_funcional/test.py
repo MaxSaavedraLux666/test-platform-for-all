@@ -13,7 +13,7 @@ class TestFlaskApp(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        service = Service("./chromedriver.exe") 
+        service = Service("C:/Users/USUARIO/Desktop/chromedriver-win64/chromedriver.exe") 
         cls.driver = webdriver.Chrome(service=service)
         cls.url = "http://localhost:5173"  
         for _ in range(10): 
