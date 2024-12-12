@@ -39,7 +39,7 @@ GitHub Issues se utiliza para registrar, clasificar y dar seguimiento a los prob
 
 **Ejemplo de un Issue en GitHub:**
 
-![docs/images/github_issue.png](Github Issue)
+![docs/images/gitgub_issue.png](Github Issue)
 
 
 ---
