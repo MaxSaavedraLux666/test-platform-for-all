@@ -11,11 +11,13 @@ import lombok.Setter;
 @Setter
 public class ForumDTO {
 
+    @SuppressWarnings("unused")
     private String idForum;
 
     @Size(max = 255)
     private String titulo;
 
+    @SuppressWarnings("unused")
     private String detalles;
 
     @Size(max = 255)
@@ -30,6 +32,7 @@ public class ForumDTO {
     @Size(max = 50)
     private String estado;
 
+    @SuppressWarnings("unused")
     private String reporte;
 
 }

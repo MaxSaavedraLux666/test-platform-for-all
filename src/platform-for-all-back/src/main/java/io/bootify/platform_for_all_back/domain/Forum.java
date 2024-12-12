@@ -23,6 +23,7 @@ public class Forum {
     @Size(max = 255)
     private String titulo;
 
+    @SuppressWarnings("unused")
     private String detalles;
 
     @Size(max = 255)
@@ -31,11 +32,13 @@ public class Forum {
     @Size(max = 255)
     private String usuarioCreadorId;
 
+    @SuppressWarnings("unused")
     private LocalTime fechaPublicacion;
 
     @Size(max = 50)
     private String estado;
 
+    @SuppressWarnings("unused")
     private String reporte;
 
     @CreatedDate
