@@ -21,6 +21,8 @@ El pipeline de CI/CD incluye las siguientes etapas principales.
             }
         }
    ```
+![pipiline](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/a9b9421e393a5cda99fefa3c56534c4cc04a9369/docs/images/pipiline.jpg)
+   
 2. **Análisis Estático**
 
    - **Herramienta**: SonarQube,SonartScanner.
