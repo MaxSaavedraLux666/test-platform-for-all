@@ -43,6 +43,7 @@ public class User {
     @Size(max = 255)
     private String rol;
 
+    @SuppressWarnings("unused")
     private LocalDateTime registrationDate;
 
     @CreatedDate
