@@ -25,6 +25,8 @@ class ForumServiceTest {
     @InjectMocks
     private ForumService forumService;
 
+    private static final String SAMPLE_FORUM_TITLE = "Sample Forum";
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -34,14 +36,14 @@ class ForumServiceTest {
     void testFindAll() {
         Forum forum = new Forum();
         forum.setIdForum("1"); // Ajustar al tipo correcto si es diferente
-        forum.setTitulo("Sample Forum");
+        forum.setTitulo(SAMPLE_FORUM_TITLE);
         when(forumRepository.findAll(Sort.by("idForum"))).thenReturn(List.of(forum));
 
         List<ForumDTO> result = forumService.findAll();
 
         assertNotNull(result);
         assertEquals(1, result.size());
-        assertEquals("Sample Forum", result.get(0).getTitulo());
+        assertEquals(SAMPLE_FORUM_TITLE, result.get(0).getTitulo());
         verify(forumRepository, times(1)).findAll(Sort.by("idForum"));
     }
 
@@ -49,13 +51,13 @@ class ForumServiceTest {
     void testGet() {
         Forum forum = new Forum();
         forum.setIdForum("1");
-        forum.setTitulo("Sample Forum");
+        forum.setTitulo(SAMPLE_FORUM_TITLE);
         when(forumRepository.findById(1L)).thenReturn(Optional.of(forum));
 
         ForumDTO result = forumService.get(1L);
 
         assertNotNull(result);
-        assertEquals("Sample Forum", result.getTitulo());
+        assertEquals(SAMPLE_FORUM_TITLE, result.getTitulo());
         verify(forumRepository, times(1)).findById(1L);
     }
 
