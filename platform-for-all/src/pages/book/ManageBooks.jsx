@@ -76,11 +76,10 @@ function ManageBooks() {
 
 
   return (
-    <div className="content-mbook">
+    <div className="container-managebooks">
       <div className="sidebarlibros">
         <Sidebar />
       </div>
-      <div className="tablalibros">
         <div className="content-show-table">
         <div className="search">
           <div className="select-filter">
@@ -100,7 +99,7 @@ function ManageBooks() {
             </InputGroup>
           </div>
         </div>
-        <div className="tabla-mbook">
+        <div className="container-table-mbook">
           {isLoading ? (
             <div className="loading-indicator">Cargando datos...</div>
           ) : (
@@ -163,8 +162,7 @@ function ManageBooks() {
             ))}
           </Form.Select>
         </div>
-      </div>
-      </div>      
+      </div>     
     </div>
   );
 }

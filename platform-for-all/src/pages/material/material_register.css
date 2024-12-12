@@ -3,15 +3,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px;
   background-color: #f9fafb; /* Fondo claro */
-  height: 110vh;
+  height: 100%;
   width: 100vw;
 }
 
 .sidebarup{
   padding-right: 100px;
-  padding-left: 20px;
 }
 
 /* Sección izquierda */
@@ -25,9 +23,9 @@
 /* Sección derecha */
 .right {
   flex: 1.5;
-  padding: 50px;
+  padding: 0px 50px;
   background: #ffffff; /* Fondo blanco */
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
@@ -35,7 +33,7 @@
 .title {
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #2c3e50;
 }
 
@@ -50,7 +48,7 @@ p {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espaciado entre elementos */
+  gap: 10px; /* Espaciado entre elementos */
   
 }
 
@@ -109,6 +107,12 @@ textarea {
 
 .add-file-button:hover {
   background-color: #2563eb; /* Azul más oscuro */
+}
+
+.button-content{
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .button-icon {

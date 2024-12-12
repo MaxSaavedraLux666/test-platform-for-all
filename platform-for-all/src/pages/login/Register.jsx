@@ -1,10 +1,7 @@
-import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import '../login/Register.css';
 import ImgRegister from '../../assets/login-register/register-img.svg';
-import triangle1 from '../../assets/login-register/rectangulo-register-1.svg';
-import triangle2 from '../../assets/login-register/rectangulo-register-2.svg';
 
 function Register() {
     const navigate = useNavigate();
@@ -17,10 +14,6 @@ function Register() {
         <div className="register-content">
             <div className="imagen-register">
                 <img src={ImgRegister} alt="Imagen de Registro" className="img-register" />
-                <div className='rectangulos-register'>
-                    <img src={triangle1} alt="triangulo1" className='img-rectangulo1'/>
-                    <img src={triangle2} alt="triangulo2" className='img-rectangulo2'/>
-                </div>
             </div>
 
             <div className="formulario-register">
@@ -32,14 +25,14 @@ function Register() {
                         <Form.Control 
                             className="control-register" 
                             type="text" 
-                            placeholder="Nombre completo"
+                            placeholder="Max Bruno Saavedra Monterrey"
                         />
 
                         <Form.Label>Usuario</Form.Label>
                         <Form.Control 
                             className="control-register" 
                             type="text" 
-                            placeholder="Usuario"
+                            placeholder="Maxbr"
                         />
 
                         <Form.Label>Correo</Form.Label>

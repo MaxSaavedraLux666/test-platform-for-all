@@ -162,7 +162,7 @@ function ManageUsers() {
             </button>
           </div>
           <Form.Select value={pageSize} onChange={e => setPageSize(Number(e.target.value))} className='select-pagination'>
-            {[5, 10, 15].map(size => (
+            {[5, 8 , 10, 15].map(size => (
               <option key={size} value={size}>Mostrar {size}</option>
             ))}
           </Form.Select>

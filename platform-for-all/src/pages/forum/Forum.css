@@ -1,6 +1,7 @@
 .mainforo {
     display: flex;
     flex-direction: column;
+    width: 100%;
     background-color: #ffffff;
     color: #333;
     padding: 20px;

@@ -15,6 +15,7 @@ import { Button } from 'react-bootstrap';
 import '../book/Biblioteca.css';
 import Sidebar from '../../components/sidebar/Sidebar.jsx';
 
+
 function Biblioteca() {
   const navigate = useNavigate();
   const books = useBooks();
@@ -93,8 +94,21 @@ function Biblioteca() {
           </div>
 
           {/* Grid de libros */}
-          <div className="books">
-            <Box sx={{ flexGrow: 1 }}>
+          <div className="grid-books">
+            {
+              paginatedBooks.map((book)=>(
+                <div key={book.id} className='cardBook'>
+                    <div className='container-image'>
+                      <img src={book.cover} alt={book.title} className="book-cover" />
+                    </div>
+                      <p className="book-category">{book.category}</p>
+                      <p className="book-title">{book.title}</p>
+                      <Button className='buttondetail' onClick={() => navigate(`/biblioteca/book/${book.id}`)}>Aprender</Button>
+                </div>
+              ))
+
+            }
+            {/* <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={2}>
                 {paginatedBooks.map((book) => (
                   <Grid item xs={3} sm={3} md={3} key={book.id}>
@@ -107,7 +121,7 @@ function Biblioteca() {
                   </Grid>
                 ))}
               </Grid>
-            </Box>
+            </Box> */}
           </div>
 
           {/* Paginación */}

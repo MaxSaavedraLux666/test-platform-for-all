@@ -81,7 +81,7 @@ const RegistrarMaterial = () => {
               onChange={(e) => setCurso(e.target.value)}
               required
             >
-              <option value="">Seleccionr categoría</option>
+              <option value="">Seleccionar categoría</option>
               <option value="Historia">Historia</option>
               <option value="Literatura">Literatura</option>
               <option value="Ciencias">Ciencias</option>
