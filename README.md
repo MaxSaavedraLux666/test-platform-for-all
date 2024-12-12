@@ -1,214 +1,65 @@
 
-# Gestión de Cambios y CI/CD con Jenkins
+# Plataforma de Gestión y Automatización
 
-## Integrantes
+Este repositorio contiene la documentación y el desarrollo de una plataforma de gestión y automatización que incluye funcionalidades de CI/CD, pruebas automatizadas y gestión de issues.
 
-- Fabricio Vidal Chuquispuma Merino
-- Max Bruno Saavedra Monterrey
-- Geomar Willy Fernandez Camacho
-- Eysen Christopher Pérez Bazán
-- Axel Patrick Félix Huayhua
+## Índice de Documentación
 
-## Propósito del Proyecto
+### General
 
-El proyecto tiene como objetivo implementar una solución completa de gestión de cambios para solicitudes de requisitos, mejoras, errores y code smells. Además, se establece un pipeline de CI/CD utilizando Jenkins para garantizar calidad y eficiencia en todas las etapas del ciclo de desarrollo de software.
+- [Integrantes](docs/integrantes.md)
+- [Introducción](docs/introduccion.md)
+- [Propósito del Proyecto](docs/proposito.md)
+- [Objetivos](docs/objetivos.md)
+- [Funcionalidades Principales](docs/funcionalidades.md)
 
-## Objetivo
+### Pruebas
 
-- Automatizar el proceso de construcción, pruebas y despliegue del proyecto.
-- Facilitar la colaboración mediante la gestión de issues y tareas en GitHub.
-- Garantizar la calidad del código con pruebas estáticas, unitarias, funcionales, de seguridad y de performance.
+- [Pruebas Unitarias](docs/pruebas/pruebas_unitarias.md)
+- [Pruebas Funcionales](docs/pruebas/pruebas_funcionales.md)
+- [Pruebas de Seguridad](docs/pruebas/pruebas_seguridad.md)
+- [Pruebas de Performance](docs/pruebas/pruebas_performance.md)
 
----
+### Pipeline
 
-## Funcionalidades principales
+- [Pipeline de CI/CD](docs/pipeline.md)
 
-A continuación, se presentan las funcionalidades clave del proyecto:
+### Gestión de Issues
 
-### Interfaz de Gestión
-![Interfaz de Gestión](imagenes/interfaz_gestion.png)
+- [Gestión de Issues](docs/gestion_issues.md)
 
-### Pipeline de CI/CD
-![Pipeline Jenkins](imagenes/pipeline_jenkins.png)
+## Cómo Clonar el Repositorio
 
----
-
-## Pipeline de CI/CD
-
-El pipeline de CI/CD implementado en Jenkins incluye las siguientes etapas. Cada etapa está integrada con herramientas específicas, con evidencia y fragmentos de código relevantes.
-
-### 1. Construcción Automática
-
-**Herramienta/Framework:**  
-- Maven para construir el proyecto Java.
-- Vite para construir el proyecto React
-
-**Evidencia (fragmento de código):**
-```groovy
-stage("Build frontend"){
-    steps{
-        dir("platform-for-all"){
-            bat "npm install"
-            bat "npm run build"                   
-        }
-    }
-}
-stage("Build backend"){
-    steps{
-        dir("platform-for-all-back"){
-            bat "mvn clean compile"    
-        }
-    }
-}
+```bash
+git clone https://github.com/MaxSaavedraLux666/test-platform-for-all.git
+cd test-platform-for-all
 ```
 
-### 2. Análisis Estático
+## Cómo Ejecutar el Proyecto
 
-**Herramienta/Framework:**  
-- SonarQube para análisis de calidad del código.
+### Frontend
 
-**Evidencia (fragmento de código):**
-```groovy
-stage("SonarQube Analysis Backend") {
-            steps {
-                dir("platform-for-all-back"){
-                    bat "$SCANNER_HOME/bin/sonar-scanner -Dsonar.url=http://localhost:9000/ \
-                    -Dsonar.login=squ_324480fe7535a685e927cb1708c11004160ce62d \
-                    -Dsonar.projectKey=jenkins-back \
-                    -Dsonar.projectName=jenkins-back \
-                    -Dsonar.sources=. \
-                    -Dsonar.java.binaries=target "
-                }                
-            }
-        }
-        stage("SonarQube Analysis Frontend") {
-            steps {
-                dir("platform-for-all-all"){
-                    bat "$SCANNER_HOME/bin/sonar-scanner -Dsonar.url=http://localhost:9000/ \
-                    -Dsonar.login=squ_324480fe7535a685e927cb1708c11004160ce62d \
-                    -Dsonar.projectKey=jenkins-front \
-                    -Dsonar.projectName=jenkins-front \
-                    -Dsonar.sources=. \
-                    -Dsonar.java.binaries=target "
-                }                
-            }
-        }
+```bash
+cd platform-for-all
+npm install
+npm run build
 ```
 
-**Integración con Jenkins:**
-- Conexión con el servidor SonarQube configurado en Jenkins.
+### Backend
 
----
-
-### 3. Pruebas Unitarias
-
-**Herramienta/Framework:**  
-- JUnit para pruebas unitarias en el backend.
-- 
-
-**Evidencia (fragmento de código):**
-```groovy
-stage("Test backend"){
-    steps{
-        dir("platform-for-all-back"){
-            bat "mvn test"
-        }
-    }
-}
-stage("Test frontend") {
-    steps {
-        dir("platform-for-all") {
-                    script{
-                        catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE'){
-                            bat "npm test"                               
-                        }
-                    }
-        }
-    }
-}
+```bash
+cd platform-for-all-back
+mvn clean compile
 ```
 
-**Integración con Jenkins:**
-- Publicación de resultados de pruebas en el panel de Jenkins.
+## Cómo Contribuir
+
+1. Realiza un fork del repositorio.
+2. Crea una rama con el nombre de tu feature: `git checkout -b feature/nueva-funcionalidad`.
+3. Realiza los cambios necesarios y haz commit: `git commit -m "Agregada nueva funcionalidad"`.
+4. Sube los cambios a tu fork: `git push origin feature/nueva-funcionalidad`.
+5. Crea un Pull Request explicando los cambios realizados.
 
 ---
 
-### 4. Pruebas Funcionales
-
-**Herramienta/Framework:**  
-- Selenium para pruebas funcionales automatizadas.
-
-**Evidencia (fragmento de código):**
-```groovy
-stage('Functional Tests') {
-    steps {
-        sh 'mvn -Dtest=FunctionalTests test'
-    }
-}
-```
-
-**Integración con Jenkins:**
-- Ejecución de pruebas en un entorno de integración continua.
-
----
-
-### 5. Pruebas de Seguridad
-
-**Herramienta/Framework:**  
-- OWASP Dependency-Check para detectar vulnerabilidades en dependencias.
-
-**Evidencia (fragmento de código):**
-```groovy
-stage('Security Tests') {
-    steps {
-        sh 'dependency-check --project my-project'
-    }
-}
-```
-
-**Integración con Jenkins:**
-- Informes generados automáticamente después de la etapa de prueba.
-
----
-
-### 6. Pruebas de Performance
-
-**Herramienta/Framework:**  
-- Apache JMeter para pruebas de carga.
-
-**Evidencia (fragmento de código):**
-```groovy
-stage('Performance Tests') {
-    steps {
-        sh 'jmeter -n -t tests/PerformanceTest.jmx'
-    }
-}
-```
-
-**Integración con Jenkins:**
-- Resultados de rendimiento publicados como artefactos.
-
----
-
-### 7. Gestión de Issues
-
-#### GitHub Issues
-- Registro de defectos clasificados en categorías como:
-  - **Bug:** Errores encontrados durante las pruebas.
-  - **Improvement:** Mejora del código.
-  - **New Requirement:** Nuevas funcionalidades solicitadas.
-
-#### Ejemplo de Issue:
-- **Título:** Error en validación de entrada  
-- **Etiqueta:** Bug  
-- **Asignado a:** @usuario  
-
-#### GitHub Projects
-- Creación de un tablero del proyecto para la división de tareas del equipo:
-  - **Nombre de la tarea:** Implementación de pruebas unitarias.
-  - **Descripción:** Desarrollo de casos de prueba para las clases `User` y `Order`.
-  - **Responsable:** @miembro_equipo.
-  - **Etiqueta:** Testing.
-  - **Duración estimada:** 3 días.
-
----
+Este proyecto es mantenido por el equipo de desarrollo y está abierto a contribuciones de la comunidad.
