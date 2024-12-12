@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="PruebasFuncionales" tests="8" time="1.411">
+  <testsuite name="BooksGet" id="0982dcb8-4b9a-44cf-a7e3-ef8e063bb350" timestamp="2024-12-12T20:00:22.332Z" tests="2" failures="0" errors="0" time="0.262">
+    <testcase name="Status code is 200" time="0.262" classname="BooksGet"/>
+    <testcase name="Response is an array" time="0.262" classname="BooksGet"/>
+  </testsuite>
+  <testsuite name="BooksPost" id="06a86c18-d0ae-4248-936b-6233b3aa6740" timestamp="2024-12-12T20:00:22.332Z" tests="2" failures="0" errors="0" time="0.207">
+    <testcase name="Status code is 201" time="0.207" classname="BooksPost"/>
+    <testcase name="Response is a string" time="0.207" classname="BooksPost"/>
+  </testsuite>
+  <testsuite name="ForumGet" id="8f1ed2c1-2136-4cfa-b9cb-da288ec46109" timestamp="2024-12-12T20:00:22.332Z" tests="2" failures="0" errors="0" time="0.118">
+    <testcase name="Status code is 200" time="0.118" classname="ForumGet"/>
+    <testcase name="Response is an array" time="0.118" classname="ForumGet"/>
+  </testsuite>
+  <testsuite name="ForumPost" id="caaec691-cbf6-4a4c-ab10-98cdae7f4409" timestamp="2024-12-12T20:00:22.332Z" tests="2" failures="0" errors="0" time="0.201">
+    <testcase name="Status code is 201" time="0.201" classname="ForumPost"/>
+    <testcase name="Response is a string" time="0.201" classname="ForumPost"/>
+  </testsuite>
+  <testsuite name="UserGet" id="ae0d5843-3394-4f4e-a1cc-857c1662951c" timestamp="2024-12-12T20:00:22.332Z" tests="2" failures="0" errors="0" time="0.104">
+    <testcase name="Status code is 200" time="0.104" classname="UserGet"/>
+    <testcase name="Response is an array" time="0.104" classname="UserGet"/>
+  </testsuite>
+  <testsuite name="UserGet Copy" id="6e53c857-9655-4e82-9e7b-bbe199d4ca5d" timestamp="2024-12-12T20:00:22.332Z" tests="1" failures="0" errors="0" time="0.107">
+    <testcase name="Status code is 204" time="0.107" classname="UserGetCopy"/>
+  </testsuite>
+  <testsuite name="UserPost" id="e46c4f2b-672f-4ad5-93f1-5760e01c7b2a" timestamp="2024-12-12T20:00:22.332Z" tests="2" failures="0" errors="0" time="0.200">
+    <testcase name="Status code is 201" time="0.200" classname="UserPost"/>
+    <testcase name="Response is a string" time="0.200" classname="UserPost"/>
+  </testsuite>
+  <testsuite name="UserPut" id="c2182890-fd62-43d1-b15d-a624b5e994e8" timestamp="2024-12-12T20:00:22.332Z" tests="2" failures="0" errors="0" time="0.212">
+    <testcase name="Status code is 200" time="0.212" classname="UserPut"/>
+    <testcase name="Response is a string" time="0.212" classname="UserPut"/>
+  </testsuite>
+</testsuites>
