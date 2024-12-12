@@ -104,27 +104,30 @@ function ManageUsers() {
         </div>
         <div className="tabla-mbook">
           <table {...getTableProps()}>
-            <thead className="header-table-mbook">
-              {headerGroups.map(headerGroup => (
-                <tr {...headerGroup.getHeaderGroupProps()} className="row-header">
-                  {headerGroup.headers.map(column => (
-                    <th
-                      key={column.id || column.accessor}
-                      {...column.getHeaderProps(column.getSortByToggleProps())}
-                      className={
-                        column.isSorted
-                          ? column.isSortedDesc
-                            ? 'desc'
-                            : 'asc'
-                          : ''
-                      }
-                    >
-                      {column.render("Header")}
-                    </th>
-                  ))}
-                </tr>
-              ))}
-            </thead>
+          <thead className="header-table-mbook">
+            {headerGroups.map(headerGroup => (
+              <tr {...headerGroup.getHeaderGroupProps()} className="row-header">
+                    {headerGroup.headers.map(column => {
+                      // Extraemos la lógica ternaria
+                      const sortClass = column.isSorted
+                        ? column.isSortedDesc
+                          ? 'desc'
+                          : 'asc'
+                        : '';
+
+                      return (
+                        <th
+                          key={column.id || column.accessor}
+                          {...column.getHeaderProps(column.getSortByToggleProps())}
+                          className={sortClass} // Usamos la variable extraída
+                        >
+                          {column.render("Header")}
+                        </th>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </thead>
             <tbody {...getTableBodyProps()}>
               {page.map(row => {
                 prepareRow(row);

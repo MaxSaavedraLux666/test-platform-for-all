@@ -23,9 +23,9 @@ function OnlyForum() {
                     <h1>{forum.title}</h1>
                     <div className="contentforum">{forum.content}</div>
                     <div className="tags">
-                        {forum.tags.map((tag, index) => (
-                            <span key={index} className="tag">
-                                #{tag}
+                        {forum.tags.map((tag) => (
+                            <span key={tag.id} className="tag">
+                                #{tag.name}
                             </span>
                         ))}
                     </div>
