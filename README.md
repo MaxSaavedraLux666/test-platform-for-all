@@ -32,18 +32,18 @@ Este repositorio contiene la documentación y el desarrollo de una plataforma de
 
 ```plaintext
 ├── docs/
+│   ├── images/
+│   ├── Pruebas/
 │   ├── introduccion.md
 │   ├── pipeline.md
 │   ├── construccion_automatica.md
-│   ├── pruebas.md
-│   ├── issues.md
 │   ├── gestion_proyecto.md
 │   └── equipo.md
 ├── src/
 │   ├── backend/
 │   ├── frontend/
-│   └── database/
 ├── tests/
+│   ├── Estatica/
 │   ├── unitarias/
 │   ├── funcionales/
 │   ├── seguridad/
