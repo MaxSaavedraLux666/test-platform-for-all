@@ -1,4 +1,3 @@
-
 # Plataforma de Gestión y Automatización
 
 Este repositorio contiene la documentación y el desarrollo de una plataforma de gestión y automatización que incluye funcionalidades de CI/CD, pruebas automatizadas y gestión de issues.
@@ -15,10 +14,10 @@ Este repositorio contiene la documentación y el desarrollo de una plataforma de
 
 ### Pruebas
 
-- [Pruebas Unitarias](docs/pruebas/Unitaria.md)
-- [Pruebas Funcionales](docs/pruebas/Funcionales.md)
-- [Pruebas de Seguridad](docs/pruebas/Seguridad.md)
-- [Pruebas de Performance](docs/pruebas/Rendimiento.md)
+- [Pruebas Unitarias](docs/Pruebas/Unitaria.md)
+- [Pruebas Funcionales](docs/Pruebas/Funcional.md)
+- [Pruebas de Seguridad](docs/Pruebas/Seguridad.md)
+- [Pruebas de Performance](docs/Pruebas/Rendimiento.md)
 
 ### Pipeline
 
