@@ -36,8 +36,6 @@ public class Forum {
     @Size(max = 50)
     private String estado;
 
-    private String reporte;
-
     @CreatedDate
     private OffsetDateTime dateCreated;
 

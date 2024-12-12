@@ -30,6 +30,4 @@ public class ForumDTO {
     @Size(max = 50)
     private String estado;
 
-    private String reporte;
-
 }
