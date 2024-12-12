@@ -13,7 +13,7 @@ public class PrimarySequence {
 
     @Id
     private String id;
-
+    @SuppressWarnings("unused")
     private long seq;
 
 }
