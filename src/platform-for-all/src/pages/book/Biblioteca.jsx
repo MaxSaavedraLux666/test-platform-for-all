@@ -9,7 +9,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { CiSearch } from "react-icons/ci";
 import { BiFirstPage, BiLastPage } from "react-icons/bi";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import '../book/Biblioteca.css';
 

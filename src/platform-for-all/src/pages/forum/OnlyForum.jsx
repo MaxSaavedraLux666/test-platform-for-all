@@ -23,9 +23,9 @@ function OnlyForum() {
                     <h1>{forum.title}</h1>
                     <div className="contentforum">{forum.content}</div>
                     <div className="tags">
-                        {forum.tags.map((tag, index) => (
-                            <span key={index} className="tag">
-                                #{tag}
+                        {forum.tags.map((tag) => (
+                            <span key={tag.id} className="tag">
+                                #{tag.name}
                             </span>
                         ))}
                     </div>
@@ -41,8 +41,8 @@ function OnlyForum() {
                 </div>
             </div>
             <div className="answers">
-                {forum.comments.map((comment, index) => (
-                    <div key={index} className="usersrespond">
+                {forum.comments.map((comment) => (
+                    <div key={comment.id} className="usersrespond">
                         <div className="profileuserrespond">
                             <img src={comment.profileImage} alt="Usuario" />
                             <div className="datetime">{comment.date}</div>

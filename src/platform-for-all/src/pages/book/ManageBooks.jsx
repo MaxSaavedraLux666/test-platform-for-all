@@ -90,27 +90,30 @@ function ManageBooks() {
         </div>
         <div className="tabla-mbook">
           <table {...getTableProps()}>
-            <thead className="header-table-mbook">
-              {headerGroups.map(headerGroup => (
-                <tr {...headerGroup.getHeaderGroupProps()} className="row-header">
-                  {headerGroup.headers.map(column => (
-                    <th
-                      key={column.id || column.accessor} // Pasar el key directamente aquí
-                      {...column.getHeaderProps(column.getSortByToggleProps())}
-                      className={
-                        column.isSorted
-                          ? column.isSortedDesc
-                            ? 'desc'
-                            : 'asc'
-                          : ''
-                      }
-                    >
-                      {column.render("Header")}
-                    </th>
-                  ))}
-                </tr>
-              ))}
-            </thead>
+              <thead className="header-table-mbook">
+                {headerGroups.map(headerGroup => (
+                  <tr {...headerGroup.getHeaderGroupProps()} className="row-header">
+                    {headerGroup.headers.map(column => {
+                      // Extraemos el ternario en una variable
+                      const sortClass = column.isSorted
+                        ? column.isSortedDesc
+                          ? 'desc'
+                          : 'asc'
+                        : '';
+
+                      return (
+                        <th
+                          key={column.id || column.accessor}
+                          {...column.getHeaderProps(column.getSortByToggleProps())}
+                          className={sortClass}  // Usamos la variable sortClass aquí
+                        >
+                          {column.render("Header")}
+                        </th>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </thead>
             <tbody {...getTableBodyProps()}>
               {page.map(row => {
                 prepareRow(row);

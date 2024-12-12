@@ -35,9 +35,9 @@ function Forum() {
                             <h2>{forum.title}</h2>
                             <p>{forum.description}</p>
                             <div className="tags">
-                                {forum.tags.map((tag, index) => (
-                                    <span key={index} className="tag">
-                                        #{tag}
+                                {forum.tags.map((tag) => ( 
+                                    <span key={tag.id} className="tag">
+                                        #{tag.name}
                                     </span>
                                 ))}
                             </div>
