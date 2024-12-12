@@ -70,7 +70,7 @@ cd test-platform-for-all
 ```bash
 cd platform-for-all
 npm install
-npm run build
+npm run dev
 ```
 
 ### Backend
@@ -78,6 +78,7 @@ npm run build
 ```bash
 cd platform-for-all-back
 mvn clean compile
+java -jar target/platform-for-all-back-0.0.1-SNAPSHOT.jar --httpPort=8080
 ```
 
 ## Cómo Contribuir
