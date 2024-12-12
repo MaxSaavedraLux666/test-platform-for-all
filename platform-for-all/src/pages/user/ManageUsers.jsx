@@ -8,7 +8,6 @@ import { CiSearch } from "react-icons/ci";
 import { BiFirstPage, BiLastPage } from "react-icons/bi";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import '../user/ManageUsers.css';
-import Sidebar from '../../components/sidebar/Sidebar.jsx';
 
 function ManageUsers() {
   const columns = useColumns();
@@ -38,12 +37,13 @@ function ManageUsers() {
     previousPage,
     setPageSize,
     state: { pageIndex, pageSize },
+    preGlobalFilteredRows,
     setGlobalFilter
   } = useTable(
     {
       columns,
       data,
-      initialState: { pageSize: 10, pageIndex: 0 },
+      initialState: { pageSize: 5, pageIndex: 0 },
       globalFilter: filterData // Filtro global personalizado
     },
     useGlobalFilter,
@@ -67,10 +67,7 @@ function ManageUsers() {
   };
 
   return (
-    <div className="content-mbook-user">
-      <div className="sidebaruser">
-        <Sidebar />
-      </div>
+    <div className="content-mbook">
       <div className="content-show-table">
         <div className="search">
           <div className="select-filter">
@@ -162,7 +159,7 @@ function ManageUsers() {
             </button>
           </div>
           <Form.Select value={pageSize} onChange={e => setPageSize(Number(e.target.value))} className='select-pagination'>
-            {[5, 10, 15].map(size => (
+            {[5, 10, 15, 20].map(size => (
               <option key={size} value={size}>Mostrar {size}</option>
             ))}
           </Form.Select>

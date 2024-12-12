@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -10,10 +9,9 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { CiSearch } from "react-icons/ci";
 import { BiFirstPage, BiLastPage } from "react-icons/bi";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { useNavigate} from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import '../book/Biblioteca.css';
-import Sidebar from '../../components/sidebar/Sidebar.jsx';
 
 function Biblioteca() {
   const navigate = useNavigate();
@@ -59,11 +57,7 @@ function Biblioteca() {
 
   return (
     <div className="content-bookstore">
-      <div className="sidebar-biblioteca">
-        <Sidebar />
-      </div>
-      <div className="contenidolibro">
-        <div className="title">
+      <div className="title">
         <span>Biblioteca</span>
       </div>
         <div className="content-books">
@@ -131,7 +125,6 @@ function Biblioteca() {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }

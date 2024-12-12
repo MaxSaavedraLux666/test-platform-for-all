@@ -1,7 +1,6 @@
 import './Forum.css';
 import useForumData from '../../hooks/manage-forum/forumDataHook';
 import { Link } from 'react-router-dom';
-import { FaComments, FaEye, FaTag } from "react-icons/fa";
 
 function Forum() {
     const { forums, loading, error } = useForumData();
@@ -49,11 +48,15 @@ function Forum() {
                                 <span>{forum.author}</span>
                             </div>
                             <div className="datepublication">{forum.timeAgo}</div>
+                            <div className="obra">
+                                <div className="titlebook">{forum.bookTitle}</div>
+                                <div className="authorbook">{forum.bookAuthor}</div>
+                            </div>
                         </div>
                         <div className="commits">
-                            <span><FaComments /> {forum.comments} Comentarios</span>
-                            <span><FaEye /> {forum.views} Vistas</span>
-                            <span><FaTag /> {forum.category}</span>
+                            <span>{forum.comments} Comentarios</span>
+                            <span>{forum.views} Vistas</span>
+                            <span>{forum.category}</span>
                         </div>
                     </Link>
                 ))}

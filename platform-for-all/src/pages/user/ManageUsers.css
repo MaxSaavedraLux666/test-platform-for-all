@@ -1,19 +1,21 @@
-
-.content-mbook-user {
-    padding: 10px;
+body, html {
+    height: 100%; /* Hacer que el contenedor principal ocupe el 100% de la altura */
+    margin: 0;
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
+    flex-direction: column;
+    background-color: white;
 }
 
-.sidebaruser{
-  padding-right: 100px;
-  padding-left: 30px;
+.content-mbook {
+    
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .tabla-mbook {
-    margin-top: 10px;
+    
+    margin-top: 20px;
     color: black;
     background-color: white;
     font-family: 'Courier New', Courier, monospace;

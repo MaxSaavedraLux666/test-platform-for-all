@@ -10,7 +10,6 @@ import Book from './pages/book/Book';
 import Home from './pages/home/Home';
 import Forum from './pages/forum/Forum';
 import OnlyForum from './pages/forum/OnlyForum';
-import RegistrarMaterial from './pages/material/material_register';
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
         } 
         
       />
-      <Route path="/registermaterial" element={<PrivateRoute><RegistrarMaterial /></PrivateRoute>} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route 
