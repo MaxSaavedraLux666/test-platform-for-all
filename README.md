@@ -14,10 +14,11 @@ Este repositorio contiene la documentación y el desarrollo de una plataforma de
 
 ### Pruebas
 
-- [Pruebas Unitarias](docs/Pruebas/Unitaria.md)
-- [Pruebas Funcionales](docs/Pruebas/Funcional.md)
+- [Pruebas Unitarias](docs/Pruebas/Unitaria/Unitaria.md)
+- [Pruebas Funcionales](docs/Pruebas/Funcionales/Funcional.md)
 - [Pruebas de Seguridad](docs/Pruebas/Seguridad.md)
-- [Pruebas de Performance](docs/Pruebas/Rendimiento.md)
+- [Pruebas de Performance](docs/Pruebas/Rendimiento/Rendimiento.md)
+- [Pruebas Estaticas](docs/Pruebas/Estatica)
 
 ### Pipeline
 
