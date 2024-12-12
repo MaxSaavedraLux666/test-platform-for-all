@@ -136,7 +136,7 @@ El pipeline de CI/CD incluye las siguientes etapas principales.
         }
 
    ```
-
+![seguridad](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/bcf6649e40916b77c35edcc2c60a1d8315d2170a/docs/images/seguridad.jpg)
 6. **Pruebas de Rendimiento**
 
    - **Herramienta**: JMeter.
