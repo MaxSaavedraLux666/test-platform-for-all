@@ -119,7 +119,7 @@ El pipeline de CI/CD incluye las siguientes etapas principales.
             }
         }
    ```
-
+![funcional](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/11b74e843b850e58ff5f1e3c4d1c87a03f2b2ed4/docs/images/funcional.jpg)
 
 5. **Pruebas de Seguridad**
 
@@ -151,4 +151,4 @@ El pipeline de CI/CD incluye las siguientes etapas principales.
             }
         }
       ```
-   ![frontend](https://github.com/MaxSaavedraLux666/test-platform-for-all/docs/images/image.png)
+   ![frontend](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/08cecce7e72acc0290d843b9162ffe3f95682e1c/docs/images/image.png)
