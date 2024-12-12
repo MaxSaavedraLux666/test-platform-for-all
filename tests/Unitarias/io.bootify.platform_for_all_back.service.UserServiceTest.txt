@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: io.bootify.platform_for_all_back.service.UserServiceTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.130 s -- in io.bootify.platform_for_all_back.service.UserServiceTest
