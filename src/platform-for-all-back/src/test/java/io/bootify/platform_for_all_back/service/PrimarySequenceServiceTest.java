@@ -21,6 +21,8 @@ class PrimarySequenceServiceTest {
     @InjectMocks
     private PrimarySequenceService primarySequenceService;
 
+    private static final String SAMPLE_SEQUENCE_TITLE = "primarySequence";
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this); // Considera remover esto si usas Mockito 4+
@@ -29,7 +31,7 @@ class PrimarySequenceServiceTest {
     @Test
     void testGetNextValue_ExistingSequence() {
         PrimarySequence existingSequence = new PrimarySequence();
-        existingSequence.setId("primarySequence");
+        existingSequence.setId(SAMPLE_SEQUENCE_TITLE);
         existingSequence.setSeq(10001L); // Asegúrate que seq es Long
 
         when(mongoOperations.findAndModify(any(), any(Update.class), any(), eq(PrimarySequence.class)))
@@ -47,7 +49,7 @@ class PrimarySequenceServiceTest {
                 .thenReturn(null);
 
         PrimarySequence newSequence = new PrimarySequence();
-        newSequence.setId("primarySequence");
+        newSequence.setId(SAMPLE_SEQUENCE_TITLE);
         newSequence.setSeq(10000L); // Asegúrate que seq es Long
 
         when(mongoOperations.insert(any(PrimarySequence.class))).thenReturn(newSequence); // Simula el insert
@@ -65,7 +67,7 @@ class PrimarySequenceServiceTest {
                 .thenReturn(null);
 
         PrimarySequence newSequence = new PrimarySequence();
-        newSequence.setId("primarySequence");
+        newSequence.setId(SAMPLE_SEQUENCE_TITLE);
         newSequence.setSeq(10000L);
 
         when(mongoOperations.insert(any(PrimarySequence.class))).thenReturn(newSequence);
@@ -76,7 +78,7 @@ class PrimarySequenceServiceTest {
         verify(mongoOperations, times(1)).insert(captor.capture());
 
         PrimarySequence capturedSequence = captor.getValue();
-        assertEquals("primarySequence", capturedSequence.getId());
+        assertEquals(SAMPLE_SEQUENCE_TITLE, capturedSequence.getId());
         assertEquals(10000L, capturedSequence.getSeq());
     }
 
