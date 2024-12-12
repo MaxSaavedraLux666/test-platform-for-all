@@ -27,17 +27,19 @@ class UserServiceTest {
     private User user;
     private UserDTO userDTO;
 
+    private static final String SAMPLE_USER_TITLE = "johndoe";
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         user = new User();
         user.setIdUser("1");
-        user.setUsername("johndoe");
+        user.setUsername(SAMPLE_USER_TITLE );
         user.setEmail("johndoe@example.com");
 
         userDTO = new UserDTO();
         userDTO.setIdUser("1");
-        userDTO.setUsername("johndoe");
+        userDTO.setUsername(SAMPLE_USER_TITLE );
         userDTO.setEmail("johndoe@example.com");
     }
 
@@ -59,7 +61,7 @@ class UserServiceTest {
         UserDTO foundUser = userService.get("1");
 
         assertEquals("1", foundUser.getIdUser());
-        assertEquals("johndoe", foundUser.getUsername());
+        assertEquals(SAMPLE_USER_TITLE , foundUser.getUsername());
         verify(userRepository, times(1)).findById("1");
     }
 

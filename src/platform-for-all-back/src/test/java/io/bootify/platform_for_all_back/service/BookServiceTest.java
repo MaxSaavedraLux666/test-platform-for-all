@@ -25,6 +25,8 @@ class BookServiceTest {
     @InjectMocks
     private BookService bookService;
 
+    private static final String SAMPLE_BOOK_TITLE = "Sample Book";
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -34,14 +36,14 @@ class BookServiceTest {
     void testFindAll() {
         Book book = new Book();
         book.setIdBook("1L");
-        book.setTitulo("Sample Book");
+        book.setTitulo(SAMPLE_BOOK_TITLE);
         when(bookRepository.findAll(Sort.by("id"))).thenReturn(List.of(book));
 
         List<BookDTO> result = bookService.findAll();
 
         assertNotNull(result);
         assertEquals(1, result.size());
-        assertEquals("Sample Book", result.get(0).getTitulo());
+        assertEquals(SAMPLE_BOOK_TITLE, result.get(0).getTitulo());
         verify(bookRepository, times(1)).findAll(Sort.by("id"));
     }
 
@@ -49,13 +51,13 @@ class BookServiceTest {
     void testGet() {
         Book book = new Book();
         book.setIdBook("1L");
-        book.setTitulo("Sample Book");
+        book.setTitulo(SAMPLE_BOOK_TITLE);
         when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
 
         BookDTO result = bookService.get(1L);
 
         assertNotNull(result);
-        assertEquals("Sample Book", result.getTitulo());
+        assertEquals(SAMPLE_BOOK_TITLE, result.getTitulo());
         verify(bookRepository, times(1)).findById(1L);
     }
 
