@@ -151,4 +151,4 @@ El pipeline de CI/CD incluye las siguientes etapas principales.
             }
         }
       ```
-   ![frontend](https://github.com/MaxSaavedraLux666/test-platform-for-all/docs/images/image.png)
+   ![frontend]([https://github.com/MaxSaavedraLux666/test-platform-for-all/docs/images/image.png](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/main/docs/images/image.png?raw=true))
