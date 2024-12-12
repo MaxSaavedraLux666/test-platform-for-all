@@ -89,7 +89,7 @@ El pipeline de CI/CD incluye las siguientes etapas principales.
             }
         }
 ```
-
+![unitaria](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/586375475bcf06c6c2878a2488aea497f360a23d/docs/images/unitaria.jpg)
 
 4. **Pruebas Funcionales**
 
