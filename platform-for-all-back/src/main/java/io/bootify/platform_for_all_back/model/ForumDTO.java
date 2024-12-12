@@ -16,8 +16,6 @@ public class ForumDTO {
     @Size(max = 255)
     private String titulo;
 
-    private String detalles;
-
     @Size(max = 255)
     private String tituloObra;
 
