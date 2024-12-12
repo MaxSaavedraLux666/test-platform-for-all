@@ -2,7 +2,7 @@
 
 ## Interfaz de Gestión
 
-![Interfaz de Gestión](imagenes/interfaz_gestion.png)
+![Interfaz de Gestión](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/708b2dd2ad127f5e68e425ab6de3fe2b65ac43a0/docs/images/biblioteca.jpg)
 
 ## Pipeline de CI/CD
 
