@@ -22,9 +22,6 @@ public class ForumDTO {
     @Size(max = 255)
     private String author;
 
-    @Schema(type = "string", example = "18:30")
-    private LocalTime fechaPublicacion;
-
     @Size(max = 50)
     private String estado;
 

@@ -29,8 +29,6 @@ public class Forum {
     @Size(max = 255)
     private String usuarioCreadorId;
 
-    private LocalTime fechaPublicacion;
-
     @Size(max = 50)
     private String estado;
 
