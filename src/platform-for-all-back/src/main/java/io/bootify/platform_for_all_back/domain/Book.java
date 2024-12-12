@@ -38,7 +38,7 @@ public class Book {
 
     @Size(max = 10)
     private String status;
-
+    
     private String source;
 
     @CreatedDate
