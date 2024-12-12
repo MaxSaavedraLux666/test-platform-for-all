@@ -23,7 +23,7 @@ El pipeline de CI/CD incluye las siguientes etapas principales.
    ```
 2. **Análisis Estático**
 
-   - **Herramienta**: SonarQube.
+   - **Herramienta**: SonarQube,SonartScanner.
    - **Evidencia**: Fragmento de configuración del SonarQube.
 
   ```bash
@@ -55,6 +55,12 @@ El pipeline de CI/CD incluye las siguientes etapas principales.
             }
         }
    ```
+![frontend](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/e696c0ede219f86909cd99f3cb26465703dc742e/docs/images/frontissues.jpg)
+![backend](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/4bb8c8f4accd90ecf8671359bf4f736bfb726600/docs/images/backissues.jpg)
+
+
+![front](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/7e0b89f3eac06ae5366e476ea368ad201398f93d/docs/images/frontstatic.jpg)
+![back](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/7e0b89f3eac06ae5366e476ea368ad201398f93d/docs/images/backstatic.jpg)
 
 
 3. **Pruebas Unitarias**
