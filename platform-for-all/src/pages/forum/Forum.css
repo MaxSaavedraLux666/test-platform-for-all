@@ -51,6 +51,16 @@
     background-color: #218838;
 }
 
+.filtro .buttonBack{
+    background-color: red;
+    max-width: 150px;  
+}
+
+.filtro .buttonBack:hover{
+    background-color: rgb(173, 0, 0);
+    max-width: 150px;  
+}
+
 .forums {
     display: flex;
     flex-direction: column;

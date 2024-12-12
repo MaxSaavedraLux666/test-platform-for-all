@@ -23,9 +23,9 @@ const Sidebar = () => {
 
             {/* Opciones */}
             <div className="sidebar-options">
-                <div className="sidebar-item" onClick={() => navigate('/home')}>
+                <div className="sidebar-item home" onClick={() => navigate('/home')}>
                     <FaHome className="sidebar-icon" />
-                    <span>Home</span>
+                    <span> Home</span>
                 </div>
                 <div className="sidebar-item" onClick={() => navigate('/biblioteca')}>
                     <FaBook className="sidebar-icon" />

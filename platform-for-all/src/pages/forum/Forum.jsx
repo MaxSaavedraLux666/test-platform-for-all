@@ -1,10 +1,11 @@
 import './Forum.css';
 import useForumData from '../../hooks/manage-forum/forumDataHook';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaComments, FaEye, FaTag } from "react-icons/fa";
 
 function Forum() {
     const { forums, loading, error } = useForumData();
+    const navigate = useNavigate();
 
     if (loading) return <div>Cargando foros...</div>;
     if (error) return <div>Error: {error}</div>;
@@ -12,6 +13,7 @@ function Forum() {
     return (
         <div className="mainforo">
             <div className="filtro">
+                <button className='buttonBack' onClick={()=>navigate("/home")}>Regresar</button>
                 <div className="filterby">
                     <select name="category" id="select-forum">
                         <option value="">Todas las Categorías</option>

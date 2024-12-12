@@ -5,6 +5,10 @@
     width: 100%;
 }
 
+.container{
+    background-color: red;
+}
+
 .navbar-logo {
     margin-right: 50px; /* Espacio entre el logo y los enlaces */
 }

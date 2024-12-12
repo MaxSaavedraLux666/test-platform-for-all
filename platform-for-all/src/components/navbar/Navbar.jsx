@@ -5,7 +5,7 @@ import '../navbar/Navbar.css'
 function Navbar({ logo, links }) {
   return (
     <BootstrapNavbar expand="lg" className="navbar-components">
-      <Container className="navbar-container">
+      <Container bsPrefix="container" fluid="lg">
         <BootstrapNavbar.Brand className="navbar-logo">
           {typeof logo === "string" ? (
             <img src={logo} alt="Logo" className="logo-img" />

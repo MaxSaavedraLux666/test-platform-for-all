@@ -44,6 +44,10 @@
     transition: background-color 0.3s;
 }
 
+.sidebar-item.home{
+    background-color: #2f93f9;
+}
+
 .sidebar-item:hover {
     background-color: #34495e; /* Color hover */
 }

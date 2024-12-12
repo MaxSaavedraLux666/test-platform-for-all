@@ -66,7 +66,7 @@ function Home() {
                 </div>
                 <div className="button-card" onClick={() => handleNavigation('/forum')}>
                     <FaUserAlt className="button-icon" />
-                    <p>Registrar Usuario</p>
+                    <p>Foro</p>
                 </div>
             </div>
 
