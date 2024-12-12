@@ -3,22 +3,58 @@
 ## Nombre de la Prueba
 
 **Descripción:**  
-Breve descripción del objetivo de la prueba de rendimiento. Ejemplo: Evaluar el tiempo de respuesta del sistema bajo una carga de 1000 usuarios concurrentes.
+Verificar el rendimiento del sistema sea conveniente en cuestion de tiempos de carga, soportar diversas solicitudes de distintos usuarios (300) http Request en simultaneo o paralelo, que no supere el limite de tiempo para llevarse a cabo cada solicitud
 
 ---
 
 ## Detalles de la Prueba
 
-- **Módulo/Funcionalidad:** [Nombre del módulo o funcionalidad bajo prueba]  
-- **Tipo de Prueba de Rendimiento:** [Carga, estrés, volumen, etc.]  
-- **Autor:** [Nombre del autor de la prueba]  
-- **Fecha:** [Fecha de creación de la prueba]  
+- **Módulo/Funcionalidad:** Login 
+- **Tipo de Prueba de Rendimiento:** Estres
+- **Autor:** Axel Felix Huayhua
+- **Fecha:** 10/12/2024
+
+- **Módulo/Funcionalidad:** Register
+- **Tipo de Prueba de Rendimiento:** Estres
+- **Autor:** Axel Felix Huayhua
+- **Fecha:** 10/12/2024
+
+- **Módulo/Funcionalidad:** Home
+- **Tipo de Prueba de Rendimiento:** Estres
+- **Autor:** Axel Felix Huayhua
+- **Fecha:** 10/12/2024
+
+- **Módulo/Funcionalidad:** Landing Page
+- **Tipo de Prueba de Rendimiento:** Estres
+- **Autor:** Axel Felix Huayhua
+- **Fecha:** 10/12/2024
+
+- **Módulo/Funcionalidad:** Forum
+- **Tipo de Prueba de Rendimiento:** Estres
+- **Autor:** Axel Felix Huayhua
+- **Fecha:** 10/12/2024
+
+- **Módulo/Funcionalidad:** Manage Books
+- **Tipo de Prueba de Rendimiento:** Estres
+- **Autor:** Axel Felix Huayhua
+- **Fecha:** 10/12/2024
+
+- **Módulo/Funcionalidad:** Biblioteca
+- **Tipo de Prueba de Rendimiento:** Estres
+- **Autor:** Axel Felix Huayhua
+- **Fecha:** 10/12/2024
+
+- **Módulo/Funcionalidad:** Manage Users
+- **Tipo de Prueba de Rendimiento:** Estres
+- **Autor:** Axel Felix Huayhua
+- **Fecha:** 10/12/2024
 
 ---
 
 ## Precondiciones
 
-[Descripción de las condiciones o configuraciones necesarias antes de ejecutar la prueba. Ejemplo: Configurar el servidor con los parámetros estándar de producción.]
+Asegurarse de que funcionen la app web correctamente, habiendo superado exitosamente las pruebas funcionales y unitarias
+
 
 ---
 
@@ -26,18 +62,18 @@ Breve descripción del objetivo de la prueba de rendimiento. Ejemplo: Evaluar el
 
 | Parámetro            | Descripción                       | Valor                     |
 |----------------------|-----------------------------------|---------------------------|
-| Número de Usuarios   | Número de usuarios simulados     | [Cantidad]               |
-| Duración             | Tiempo total de ejecución        | [Duración]               |
-| Umbral Aceptable     | Tiempo de respuesta esperado     | [Tiempo en milisegundos] |
+| Número de Usuarios   | Número de usuarios simulados     | 300             |
+| Duración             | Tiempo total de ejecución        |  30000            |
+| Umbral Aceptable     | Tiempo de respuesta esperado     | <=1000    |
 
 ---
 
 ## Pasos para Ejecutar la Prueba
 
-1. [Paso 1: Descripción detallada.]  
-2. [Paso 2: Descripción detallada.]  
-3. [Paso 3: Descripción detallada.]  
-
+1. Crear el test plan, grupo de hilos, y el http request
+2. Establecer las condiciones de la prueba asertions
+3. Establecer listenes para recolectar los datos
+4. Ejecutar la prueba 
 ---
 
 ## Resultados Esperados
@@ -56,10 +92,10 @@ Breve descripción del objetivo de la prueba de rendimiento. Ejemplo: Evaluar el
 
 | Métrica              | Valor Obtenido   | Umbral Esperado   |
 |----------------------|------------------|-------------------|
-| Tiempo de Respuesta  | [Valor]          | [Valor Esperado]  |
-| Tasa de Errores      | [Porcentaje]     | [Porcentaje Máx.] |
-| Uso de CPU           | [Porcentaje]     | [Porcentaje Máx.] |
-| Uso de Memoria       | [Cantidad]       | [Cantidad Máx.]   |
+| Tiempo de Respuesta  | [Valor]          | 500  |
+| Tasa de Errores      | [Porcentaje]     | 0% |
+| Uso de CPU           | [Porcentaje]     | 85% |
+| Uso de Memoria       | [Cantidad]       | 90%   |
 
 ---
 
@@ -67,11 +103,11 @@ Breve descripción del objetivo de la prueba de rendimiento. Ejemplo: Evaluar el
 
 - [ ] Pendiente  
 - [ ] En Proceso  
-- [ ] Aprobada  
+- [X] Aprobada  
 - [ ] Fallida  
 
 ---
 
 ## Observaciones
 
-[Cualquier comentario adicional, hallazgos relevantes o problemas detectados durante la prueba.]
+Es recomendable optimizar la carga para poner un limite de dureación de carga mas bajo y sea mas adecuado 
