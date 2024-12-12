@@ -1,0 +1,18 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://fabriciochuquispuma:1Fg2C8YC4uNxtM4y@firsttime.hgtxg.mongodb.net/Biblioteca
+      auto-index-creation: true
+error:
+  handling:
+    http-status-in-json-response: true
+    exception-logging: NO_LOGGING
+    full-stacktrace-http-statuses: 5xx
+    log-levels:
+      5xx: ERROR
+    codes:
+      UserIdUserValid: USER_ID_USER_VALID
+springdoc:
+  pathsToMatch: /, /api/**
+
+
