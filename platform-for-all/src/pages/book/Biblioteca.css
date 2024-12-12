@@ -242,7 +242,6 @@
   grid-template-rows: repeat(2,minmax(200px,300px));
   column-gap: 30px;
   row-gap: 10px;
-  background-color: #fff;
 }
 
 .cardBook{
