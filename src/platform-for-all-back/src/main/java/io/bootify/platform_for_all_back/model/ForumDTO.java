@@ -11,8 +11,12 @@ import lombok.Setter;
 @Setter
 public class ForumDTO {
 
+    private String idForum;
+
     @Size(max = 255)
     private String titulo;
+
+    private String detalles;
 
     @Size(max = 255)
     private String tituloObra;
@@ -20,7 +24,12 @@ public class ForumDTO {
     @Size(max = 255)
     private String author;
 
+    @Schema(type = "string", example = "18:30")
+    private LocalTime fechaPublicacion;
+
     @Size(max = 50)
     private String estado;
+
+    private String reporte;
 
 }
