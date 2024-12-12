@@ -66,9 +66,9 @@ function Landing() {
                     />
                 </div>
                 <div className="button-container">
-                    <button >
-                        <Button className="buttonsession" title="Iniciar Sesión" variant="link" href="/login" />
-                    </button>
+                    <a href="/login">
+                        Iniciar Sesión
+                    </a>
                 </div>
             </div>
             <div className="contenido-landing">
@@ -83,10 +83,10 @@ function Landing() {
                             La biblioteca virtual es una herramienta indispensable en el entorno académico actual, ya que ofrece acceso inmediato a una vasta colección de libros, artículos y recursos educativos desde cualquier lugar y en cualquier momento. Al eliminar las barreras geográficas y de tiempo, permite acceder a información actualizada y relevante para sus estudios o investigaciones.
                         </p>
                     </div>
-                    <div className="button-empezar">
-                        <button className="button-empezar-register">
-                            <Button title="Empezar" variant="link" href="/register" />
-                        </button>
+                    <div className="contenedor-button-empezar">
+                        <a href="/register" className="buttonEmpezar">
+                            Empezar
+                        </a>
                     </div>
                     <div className="imagen-inicio">
                         <img src={ ImagenInicio } alt="" />

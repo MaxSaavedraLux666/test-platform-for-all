@@ -32,13 +32,16 @@ public class Book {
     @Size(max = 50)
     private String categoria;
 
+    @SuppressWarnings("unused")
     private String descripcion;
 
+    @SuppressWarnings("unused")
     private LocalDate fechaPublicacion;
 
     @Size(max = 10)
     private String status;
 
+    @SuppressWarnings("unused")
     private String source;
 
     @CreatedDate

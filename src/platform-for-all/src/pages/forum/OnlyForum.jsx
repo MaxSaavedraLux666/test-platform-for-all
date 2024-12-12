@@ -41,7 +41,7 @@ function OnlyForum() {
                 </div>
             </div>
             <div className="answers">
-                {forum.comments.map((comment) => (
+                {forum.comments.map((comment, index) => (
                     <div key={comment.id} className="usersrespond">
                         <div className="profileuserrespond">
                             <img src={comment.profileImage} alt="Usuario" />

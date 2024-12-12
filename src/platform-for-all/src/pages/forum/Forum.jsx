@@ -1,9 +1,11 @@
 import './Forum.css';
 import useForumData from '../../hooks/manage-forum/forumDataHook';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaComments, FaEye, FaTag } from "react-icons/fa";
 
 function Forum() {
     const { forums, loading, error } = useForumData();
+    const navigate = useNavigate();
 
     if (loading) return <div>Cargando foros...</div>;
     if (error) return <div>Error: {error}</div>;
@@ -11,6 +13,7 @@ function Forum() {
     return (
         <div className="mainforo">
             <div className="filtro">
+                <button className='buttonBack' onClick={()=>navigate("/home")}>Regresar</button>
                 <div className="filterby">
                     <select name="category" id="select-forum">
                         <option value="">Todas las Categorías</option>
@@ -48,15 +51,11 @@ function Forum() {
                                 <span>{forum.author}</span>
                             </div>
                             <div className="datepublication">{forum.timeAgo}</div>
-                            <div className="obra">
-                                <div className="titlebook">{forum.bookTitle}</div>
-                                <div className="authorbook">{forum.bookAuthor}</div>
-                            </div>
                         </div>
                         <div className="commits">
-                            <span>{forum.comments} Comentarios</span>
-                            <span>{forum.views} Vistas</span>
-                            <span>{forum.category}</span>
+                            <span><FaComments /> {forum.comments} Comentarios</span>
+                            <span><FaEye /> {forum.views} Vistas</span>
+                            <span><FaTag /> {forum.category}</span>
                         </div>
                     </Link>
                 ))}
