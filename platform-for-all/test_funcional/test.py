@@ -15,7 +15,7 @@ class TestFlaskApp(unittest.TestCase):
     def setUpClass(cls):
         service = Service("./chromedriver.exe") 
         cls.driver = webdriver.Chrome(service=service)
-        cls.url = "http://localhost:5173"  
+        cls.url = "http://localhost:5174"  
         for _ in range(10): 
             try:
                 requests.get(cls.url)

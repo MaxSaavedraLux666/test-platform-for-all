@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { useTable, useSortBy, usePagination, useGlobalFilter } from 'react-table';
 import useRows from '../../hooks/manage-book/UseRows';
 import useColumns from '../../hooks/manage-book/UseColumns';
@@ -8,7 +8,6 @@ import { CiSearch } from "react-icons/ci";
 import { BiFirstPage, BiLastPage } from "react-icons/bi";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import '../book/ManageBooks.css';
-import Sidebar from '../../components/sidebar/Sidebar.jsx';
 
 function ManageBooks() {
   const columns = useColumns();
@@ -17,12 +16,6 @@ function ManageBooks() {
   // Estado para el valor de búsqueda y columna seleccionada
   const [selectedColumn, setSelectedColumn] = useState("titulo");
   const [searchValue, setSearchValue] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simula la carga de datos
-    setTimeout(() => setIsLoading(false), 2000); // Cambia según tu lógica de carga
-  }, []);
 
   // Función de filtro personalizada para la columna seleccionada
   const filterData = useMemo(() => {
@@ -55,7 +48,7 @@ function ManageBooks() {
       columns,
       data,
       globalFilter: filterData,
-      initialState: { pageSize: 15, pageIndex: 0 }
+      initialState: { pageSize: 5, pageIndex: 0 }
     },
     useGlobalFilter,
     useSortBy,
@@ -74,14 +67,9 @@ function ManageBooks() {
     setGlobalFilter(value); // Aplica el filtro global
   };
 
-
   return (
     <div className="content-mbook">
-      <div className="sidebarlibros">
-        <Sidebar />
-      </div>
-      <div className="tablalibros">
-        <div className="content-show-table">
+      <div className="content-show-table">
         <div className="search">
           <div className="select-filter">
             <Form.Select aria-label="Select Column" className="filtro-drop" onChange={handleColumnChange} value={selectedColumn}>
@@ -101,41 +89,43 @@ function ManageBooks() {
           </div>
         </div>
         <div className="tabla-mbook">
-          {isLoading ? (
-            <div className="loading-indicator">Cargando datos...</div>
-          ) : (
-            <table {...getTableProps()}>
-              <thead className="header-table-mbook">
-                {headerGroups.map(headerGroup => (
-                  <tr {...headerGroup.getHeaderGroupProps()} className="row-header">
-                    {headerGroup.headers.map(column => (
-                      <th
-                        key={column.id || column.accessor}
-                        {...column.getHeaderProps(column.getSortByToggleProps())}
-                        className={column.isSorted ? (column.isSortedDesc ? 'desc' : 'asc') : ''}
-                      >
-                        {column.render("Header")}
-                      </th>
+          <table {...getTableProps()}>
+            <thead className="header-table-mbook">
+              {headerGroups.map(headerGroup => (
+                <tr {...headerGroup.getHeaderGroupProps()} className="row-header">
+                  {headerGroup.headers.map(column => (
+                    <th
+                      key={column.id || column.accessor} // Pasar el key directamente aquí
+                      {...column.getHeaderProps(column.getSortByToggleProps())}
+                      className={
+                        column.isSorted
+                          ? column.isSortedDesc
+                            ? 'desc'
+                            : 'asc'
+                          : ''
+                      }
+                    >
+                      {column.render("Header")}
+                    </th>
+                  ))}
+                </tr>
+              ))}
+            </thead>
+            <tbody {...getTableBodyProps()}>
+              {page.map(row => {
+                prepareRow(row);
+                return (
+                  <tr {...row.getRowProps()}>
+                    {row.cells.map(cell => (
+                      <td {...cell.getCellProps()} className="table-row">
+                        {cell.render("Cell")}
+                      </td>
                     ))}
                   </tr>
-                ))}
-              </thead>
-              <tbody {...getTableBodyProps()}>
-                {page.map(row => {
-                  prepareRow(row);
-                  return (
-                    <tr {...row.getRowProps()}>
-                      {row.cells.map(cell => (
-                        <td {...cell.getCellProps()} className="table-row">
-                          {cell.render("Cell")}
-                        </td>
-                      ))}
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          )}
+                );
+              })}
+            </tbody>
+          </table>
         </div>
 
         {/* Paginación */}
@@ -158,13 +148,12 @@ function ManageBooks() {
             </button>
           </div>
           <Form.Select value={pageSize} onChange={e => setPageSize(Number(e.target.value))} className='select-pagination'>
-            {[5, 10, 15].map(size => (
+            {[5, 10, 15, 20].map(size => (
               <option key={size} value={size}>Mostrar {size}</option>
             ))}
           </Form.Select>
         </div>
       </div>
-      </div>      
     </div>
   );
 }

@@ -5,17 +5,15 @@ import Cookies from 'js-cookie'; // Importa la librería js-cookie
 
 const AuthContext = createContext();
 
-export const useAuth = () => useContext(AuthContext);
-
 export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Leer el estado de autenticación de las cookies
-        const authCookie = Cookies.get('auth');
-        if (authCookie) {
-        setIsAuthenticated(true);
+        // Verificar si el usuario ya está autenticado al cargar la aplicación
+        const storedAuth = Cookies.get('isAuthenticated');
+        if (storedAuth === 'true') {
+            setIsAuthenticated(true);
         }
     }, []);
 
@@ -27,7 +25,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setIsAuthenticated(false);
-        Cookies.remove('auth'); // Eliminar cookie
+        Cookies.remove('isAuthenticated'); // Eliminar cookie
         navigate('/login');
     };
 
@@ -43,4 +41,4 @@ AuthProvider.propTypes = {
     children: PropTypes.node.isRequired, // children debe ser un nodo React válido
 };
 
-
+export const useAuth = () => useContext(AuthContext);
