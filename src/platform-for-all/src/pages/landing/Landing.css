@@ -36,14 +36,21 @@
     border-radius: 10px;
 }
 
+.contenedor-button-empezar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .buttonEmpezar{
     display: flex;
     color: white;
     background-color: skyblue;
     padding: 15px 20px;
     border-radius: 15px;
-    width: 100%;
+    width: 10%;
     font-weight: bolder;
+    align-items: center;
     justify-content: center;
     font-family: 'Courier New', Courier, monospace
 }
