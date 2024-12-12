@@ -10,8 +10,6 @@ import lombok.Setter;
 @Setter
 public class BookDTO {
 
-    private String idBook;
-
     @Size(max = 255)
     private String titulo;
 
@@ -23,10 +21,6 @@ public class BookDTO {
 
     @Size(max = 50)
     private String categoria;
-
-    private String descripcion;
-
-    private LocalDate fechaPublicacion;
 
     @Size(max = 10)
     private String status;

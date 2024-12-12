@@ -32,8 +32,6 @@ public class Book {
     @Size(max = 50)
     private String categoria;
 
-    private String descripcion;
-
     private LocalDate fechaPublicacion;
 
     @Size(max = 10)

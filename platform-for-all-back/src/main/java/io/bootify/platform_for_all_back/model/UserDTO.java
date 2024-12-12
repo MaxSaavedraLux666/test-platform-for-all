@@ -35,6 +35,4 @@ public class UserDTO {
     @Size(max = 255)
     private String rol;
 
-    private LocalDateTime registrationDate;
-
 }
