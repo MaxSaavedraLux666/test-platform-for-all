@@ -67,7 +67,7 @@ Trello se utiliza para organizar las tareas generales del proyecto, agrupándola
 
 **Ejemplo de Tablero en Trello:**
 
-![Tablero Trello Ejemplo](../imagenes/trello_tablero_ejemplo.png)
+![Tablero Trello Ejemplo](https://github.com/MaxSaavedraLux666/test-platform-for-all/blob/3eb2676aec295f230a603384a700d544620e6c1f/docs/images/gitgub_issue.png)
 
 ---
 
