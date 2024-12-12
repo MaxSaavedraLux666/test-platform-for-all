@@ -7,7 +7,7 @@ Este repositorio contiene la documentación y el desarrollo de una plataforma de
 
 ### General
 
-- [Integrantes](docs/integrantes.md)
+- [Integrantes](docs/equipo.md)
 - [Introducción](docs/introduccion.md)
 - [Propósito del Proyecto](docs/proposito.md)
 - [Objetivos](docs/objetivos.md)
@@ -15,10 +15,10 @@ Este repositorio contiene la documentación y el desarrollo de una plataforma de
 
 ### Pruebas
 
-- [Pruebas Unitarias](docs/pruebas/pruebas_unitarias.md)
-- [Pruebas Funcionales](docs/pruebas/pruebas_funcionales.md)
-- [Pruebas de Seguridad](docs/pruebas/pruebas_seguridad.md)
-- [Pruebas de Performance](docs/pruebas/pruebas_performance.md)
+- [Pruebas Unitarias](docs/pruebas/Unitaria.md)
+- [Pruebas Funcionales](docs/pruebas/Funcionales.md)
+- [Pruebas de Seguridad](docs/pruebas/Seguridad.md)
+- [Pruebas de Performance](docs/pruebas/Rendimiento.md)
 
 ### Pipeline
 
@@ -27,6 +27,34 @@ Este repositorio contiene la documentación y el desarrollo de una plataforma de
 ### Gestión de Issues
 
 - [Gestión de Issues](docs/gestion_issues.md)
+
+## Estructura del Repositorio
+
+```plaintext
+├── docs/
+│   ├── introduccion.md
+│   ├── pipeline.md
+│   ├── construccion_automatica.md
+│   ├── pruebas.md
+│   ├── issues.md
+│   ├── gestion_proyecto.md
+│   └── equipo.md
+├── src/
+│   ├── backend/
+│   ├── frontend/
+│   └── database/
+├── tests/
+│   ├── unitarias/
+│   ├── funcionales/
+│   ├── seguridad/
+│   └── rendimiento/
+├── README.md
+└── .github/
+    ├── workflows/
+    │   ├── ci.yml
+    │   └── cd.yml
+    └── ISSUE_TEMPLATE.md
+```
 
 ## Cómo Clonar el Repositorio
 
