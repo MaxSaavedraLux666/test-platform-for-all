@@ -43,8 +43,6 @@ public class User {
     @Size(max = 255)
     private String rol;
 
-    private LocalDateTime registrationDate;
-
     @CreatedDate
     private OffsetDateTime dateCreated;
 
